@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{book.title}} - Изменить книгу</title>
+</head>
+
+<body>
+    <!-- код писать сюда -->
+    <form action = "/books/{{book.id}}/edit" method="post">
+        Title: <input name="title" type="text" value = "{{book.title}}"> <br>
+        Author: <input name="author" type="text" value = "{{book.author}}"> <br>
+        Year: <input name="year" type="text" value={{book.year}}> <br>
+        Total pages: <input name="total_pages" type="text" value={{book.total_pages}}> <br>
+        Genre: <input name="genre" type="text" value={{book.genre}}> <br>
+        <input type="submit" value="Изменить">
+    </form>
+    
+
+
+
+
+
+
+    <!-- конец -->
+</body>
+
+</html>

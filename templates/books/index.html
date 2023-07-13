@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Кітап.kz - Список</title>
+    <style>
+        table, th, td {
+          border: 1px solid;
+          text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/books/new">Добавить книгу</a>
+    
+    <!-- код писать сюда 
+    
+      "id": 5,
+                "title": "The Catcher in the Rye",
+                "author": "J.D. Salinger",
+                "year": 1951,
+                "total_pages": 224,
+                "genre": "Coming-of-age",
+            },
+    -->
+    <table >
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Total Pages</th>
+            <th>Genre</th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td></t><a href = "/books/{{book.id}}"> {{book.title}}</a> </td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.total_pages}}</td>
+            <td>{{book.genre}}</td>
+        </tr>
+    {% endfor%}
+    </table>
+    <br>
+    <!-- конец -->
+    {% if page != 1 %}
+        <a href="/books?page={{ page - 1 }}">pred</a>
+    {% endif %}
+
+    {%for x in range(pages)%}
+        <a href = "/books?page={{x + 1}}">
+           {% if x + 1 == page %} 
+                <b>{{x + 1}}</b>
+           {% else %}
+                {{x + 1}}
+           {% endif %}
+        </a>
+    {% endfor %}
+    {% if page != pages %}
+        <a href="/books?page={{ page + 1 }}">next</a>
+    {% endif %}
+
+
+</body>
+
+</html>
